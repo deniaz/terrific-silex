@@ -21,7 +21,7 @@
         "php": ">=5.4",
         "silex/silex": "~1.2",
         "twig/twig": "~1.18.0",
-        "symfony/finder": "~3.0-dev",
+        "symfony/finder": "~2.6.4",
         "deniaz/terrific-twig": "dev-master"
     }
 }
