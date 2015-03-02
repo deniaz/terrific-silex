@@ -47,7 +47,7 @@ class Application extends SilexApp
             ]
         );
 
-        $app['twig'] = $this->share($this->extend('twig', function($twig, $app) {
+        $app['twig'] = $this->share($this->extend('twig', function ($twig, $app) {
             $paths = [
                 $app['root_dir'] . $app['tc.config']->micro->view_partial_directory
             ];

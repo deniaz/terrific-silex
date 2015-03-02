@@ -28,7 +28,7 @@ class RouteProvider implements ControllerProviderInterface
     /**
      * @param array $content Mocked Content
      */
-    function __construct($content = [])
+    public function __construct($content = [])
     {
         $this->content = $content;
     }
@@ -41,12 +41,12 @@ class RouteProvider implements ControllerProviderInterface
         /** @var ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', function(Application $app) {
+        $controllers->get('/', function (Application $app) {
             $subRequest = Request::create('/index', 'GET');
             return $app->handle($subRequest, HttpKernelInterface::SUB_REQUEST);
         });
 
-        $controllers->get('/{view}', function(Application $app, $view) {
+        $controllers->get('/{view}', function (Application $app, $view) {
             $fileName = $view . $app['tc.config']->micro->view_file_extension;
             try {
                 $data = (isset($this->content[$view])) ? $this->content[$view] : [];
