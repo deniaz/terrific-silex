@@ -25,13 +25,14 @@ class Application extends SilexApp
      *
      * Objects and parameters can be passed as argument to the constructor.
      *
-     * @param array $values The parameters or objects.
+     * @param string $rootDir Splendid PHP Root Directory.
+     * @param array  $values The parameters or objects.
      */
-    public function __construct(array $values = [])
+    public function __construct($rootDir, array $values = [])
     {
         parent::__construct($values);
 
-        $this['root_dir'] = realpath(__DIR__ . '/../') . '/';
+        $this['root_dir'] = $rootDir . '/';
 
         $this['debug'] = true;
         $this['tc.config'] = (is_readable($this->rootDir . 'config.json'))
