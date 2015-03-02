@@ -38,7 +38,7 @@ class RouteProvider implements ControllerProviderInterface
      */
     public function connect(Application $app)
     {
-        /** @var ControllerCollection  $controllers */
+        /** @var ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
 
         $controllers->get('/', function(Application $app) {
